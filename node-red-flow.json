@@ -1,16 +1,16 @@
 [
     {
-        "id": "029daea79e489819",
+        "id": "fc7e1518a76db993",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Final Flow",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "99d89491256f1057",
+        "id": "7d48e324ceb5de75",
         "type": "mqtt in",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "topic": "home/1/room/kitchen",
         "qos": "2",
@@ -24,16 +24,15 @@
         "y": 340,
         "wires": [
             [
-                "4b3c4076a2e64793",
-                "56ffd36d7fd4f333",
-                "7cacd884a4dfda30"
+                "5b1099ec9bac1ffe",
+                "461a19836b6e67a0"
             ]
         ]
     },
     {
-        "id": "28050ff5b1d6396b",
+        "id": "34675cce3d9690af",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Trigger_Window_Clouse",
         "func": "msg.payload = \"close\";\nreturn msg;",
         "outputs": 1,
@@ -45,14 +44,14 @@
         "y": 280,
         "wires": [
             [
-                "3cd4045ebaba0bf8"
+                "a4e715dca2f10551"
             ]
         ]
     },
     {
-        "id": "836888bab8e9c780",
+        "id": "8bf352feb5112a7f",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Trigger_Air_purification",
         "func": "msg.payload = \"on\"\nreturn msg;",
         "outputs": 1,
@@ -64,41 +63,14 @@
         "y": 320,
         "wires": [
             [
-                "7a230b6e89ec30ad"
+                "667765e92c933171"
             ]
         ]
     },
     {
-        "id": "4b3c4076a2e64793",
-        "type": "ui_gauge",
-        "z": "029daea79e489819",
-        "name": "",
-        "group": "2e452c917eb8462f",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Air quality in the kitchen",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "500",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "50",
-        "seg2": "150",
-        "className": "",
-        "x": 330,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "3cd4045ebaba0bf8",
+        "id": "a4e715dca2f10551",
         "type": "mqtt out",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "topic": "home/1/room/kitchen/window/100",
         "qos": "",
@@ -108,15 +80,15 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "e36a753ffdd41585",
+        "broker": "41a5e8b17dc7f5bc",
         "x": 1100,
         "y": 280,
         "wires": []
     },
     {
-        "id": "b8a227ce87cfee31",
+        "id": "8e4ae7744069cb43",
         "type": "mqtt in",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "topic": "home/1/room/bedroom",
         "qos": "2",
@@ -130,16 +102,15 @@
         "y": 620,
         "wires": [
             [
-                "52f3ad91937b871e",
-                "0208f71faacdc0cc",
-                "134edd9744d39fbf"
+                "d8a9d07231dc761c",
+                "91153e6f83d74810"
             ]
         ]
     },
     {
-        "id": "e88b1e67b398ed50",
+        "id": "92aabbaa7df905b5",
         "type": "mqtt in",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "topic": "outdoor/AQI",
         "qos": "2",
@@ -153,19 +124,19 @@
         "y": 40,
         "wires": [
             [
-                "09161b42720a0905",
-                "26c3672e7bba04c6",
-                "8e0c4f7904fd884d"
+                "72e1dfd2fa3471cc",
+                "e6057232bf4a36b6",
+                "7e17f06e1f595c39"
             ]
         ]
     },
     {
-        "id": "09161b42720a0905",
+        "id": "72e1dfd2fa3471cc",
         "type": "ui_gauge",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "group": "2e452c917eb8462f",
-        "order": 3,
+        "order": 1,
         "width": 0,
         "height": 0,
         "gtype": "gage",
@@ -187,36 +158,9 @@
         "wires": []
     },
     {
-        "id": "52f3ad91937b871e",
-        "type": "ui_gauge",
-        "z": "029daea79e489819",
-        "name": "",
-        "group": "2e452c917eb8462f",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Air quality in the bedroom",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "500",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "50",
-        "seg2": "150",
-        "className": "",
-        "x": 510,
-        "y": 560,
-        "wires": []
-    },
-    {
-        "id": "56ffd36d7fd4f333",
+        "id": "5b1099ec9bac1ffe",
         "type": "switch",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Check",
         "property": "payload",
         "propertyType": "msg",
@@ -239,19 +183,19 @@
         "y": 340,
         "wires": [
             [
-                "28050ff5b1d6396b",
-                "836888bab8e9c780"
+                "34675cce3d9690af",
+                "8bf352feb5112a7f"
             ],
             [
-                "91aafc8e55cb8e3e",
-                "b74e74f4fdd131fb"
+                "c98996a2663d8a35",
+                "e607377a719ece3f"
             ]
         ]
     },
     {
-        "id": "7a230b6e89ec30ad",
+        "id": "667765e92c933171",
         "type": "mqtt out",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "topic": "home/1/room/kitchen/purifier/200",
         "qos": "",
@@ -261,15 +205,15 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "e36a753ffdd41585",
+        "broker": "41a5e8b17dc7f5bc",
         "x": 1060,
         "y": 340,
         "wires": []
     },
     {
-        "id": "91aafc8e55cb8e3e",
+        "id": "c98996a2663d8a35",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Trigger_Window_Open",
         "func": "msg.payload = \"open\";\nreturn msg;",
         "outputs": 1,
@@ -281,14 +225,14 @@
         "y": 420,
         "wires": [
             [
-                "3cd4045ebaba0bf8"
+                "a4e715dca2f10551"
             ]
         ]
     },
     {
-        "id": "b74e74f4fdd131fb",
+        "id": "e607377a719ece3f",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Trigger_Air_purification_off",
         "func": "msg.payload = \"off\"\nreturn msg;",
         "outputs": 1,
@@ -300,14 +244,14 @@
         "y": 460,
         "wires": [
             [
-                "7a230b6e89ec30ad"
+                "667765e92c933171"
             ]
         ]
     },
     {
-        "id": "e1c98548850e79a8",
+        "id": "10b8058e0efd4d0b",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Trigger_Window_Clouse",
         "func": "msg.payload = \"close\";\nreturn msg;",
         "outputs": 1,
@@ -319,14 +263,14 @@
         "y": 620,
         "wires": [
             [
-                "9fac44c5eac423ed"
+                "d88d3baed5b5c18d"
             ]
         ]
     },
     {
-        "id": "0333e2d16e61ba11",
+        "id": "0d0933cded715439",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Trigger_Air_purification",
         "func": "msg.payload = \"on\"\nreturn msg;",
         "outputs": 1,
@@ -338,14 +282,14 @@
         "y": 660,
         "wires": [
             [
-                "e6c174b194f32a3e"
+                "672a97a27c4cedec"
             ]
         ]
     },
     {
-        "id": "9fac44c5eac423ed",
+        "id": "d88d3baed5b5c18d",
         "type": "mqtt out",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "topic": "home/1/room/kitchen/bedroom/101",
         "qos": "",
@@ -355,15 +299,15 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "e36a753ffdd41585",
+        "broker": "41a5e8b17dc7f5bc",
         "x": 1070,
         "y": 640,
         "wires": []
     },
     {
-        "id": "0208f71faacdc0cc",
+        "id": "d8a9d07231dc761c",
         "type": "switch",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Check",
         "property": "payload",
         "propertyType": "msg",
@@ -386,19 +330,19 @@
         "y": 680,
         "wires": [
             [
-                "e1c98548850e79a8",
-                "0333e2d16e61ba11"
+                "10b8058e0efd4d0b",
+                "0d0933cded715439"
             ],
             [
-                "ad2a59f577ed5afc",
-                "158a07426f9082e4"
+                "610c82f4cb96f3fb",
+                "f2454005d0383176"
             ]
         ]
     },
     {
-        "id": "e6c174b194f32a3e",
+        "id": "672a97a27c4cedec",
         "type": "mqtt out",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "topic": "home/1/room/bedroom/purifier/202",
         "qos": "",
@@ -408,15 +352,15 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "e36a753ffdd41585",
+        "broker": "41a5e8b17dc7f5bc",
         "x": 1060,
         "y": 720,
         "wires": []
     },
     {
-        "id": "ad2a59f577ed5afc",
+        "id": "610c82f4cb96f3fb",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Trigger_Window_Open",
         "func": "msg.payload = \"open\";\nreturn msg;",
         "outputs": 1,
@@ -428,14 +372,14 @@
         "y": 760,
         "wires": [
             [
-                "9fac44c5eac423ed"
+                "d88d3baed5b5c18d"
             ]
         ]
     },
     {
-        "id": "158a07426f9082e4",
+        "id": "f2454005d0383176",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Trigger_Air_purification_off",
         "func": "msg.payload = \"off\"\nreturn msg;",
         "outputs": 1,
@@ -447,14 +391,14 @@
         "y": 800,
         "wires": [
             [
-                "e6c174b194f32a3e"
+                "672a97a27c4cedec"
             ]
         ]
     },
     {
-        "id": "f7da52353d8c2af7",
+        "id": "189f3064093e89f4",
         "type": "mqtt out",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "topic": "home/1/room/hall/window/111",
         "qos": "",
@@ -464,15 +408,15 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "e36a753ffdd41585",
+        "broker": "41a5e8b17dc7f5bc",
         "x": 1410,
         "y": 1020,
         "wires": []
     },
     {
-        "id": "b3643c4b08256bbe",
+        "id": "e5486a315892f942",
         "type": "switch",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Check",
         "property": "payload",
         "propertyType": "msg",
@@ -495,19 +439,19 @@
         "y": 1060,
         "wires": [
             [
-                "e3ef46933d0fe31f",
-                "a5a651b9572b7409"
+                "a140e76ad44c8fc7",
+                "1c3185f4300c4b01"
             ],
             [
-                "47a7f219fffe4ce8",
-                "f7070f761f1b075b"
+                "21b234204cbdf359",
+                "c83aa5f0487a0b57"
             ]
         ]
     },
     {
-        "id": "0ba0429aa5a8d0ba",
+        "id": "c9dd0c46adbb8779",
         "type": "mqtt out",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "topic": "home/1/room/hall/purifier/220",
         "qos": "",
@@ -517,15 +461,15 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "e36a753ffdd41585",
+        "broker": "41a5e8b17dc7f5bc",
         "x": 1410,
         "y": 1100,
         "wires": []
     },
     {
-        "id": "021386ff6256ef5b",
+        "id": "119f0e61806e697b",
         "type": "mqtt in",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "topic": "home/1/room/hall",
         "qos": "2",
@@ -539,43 +483,15 @@
         "y": 1060,
         "wires": [
             [
-                "6edc515a059843c5",
-                "b3643c4b08256bbe",
-                "5d5182a3f0214217"
+                "e5486a315892f942",
+                "5495911ae57a0c8c"
             ]
         ]
     },
     {
-        "id": "6edc515a059843c5",
-        "type": "ui_gauge",
-        "z": "029daea79e489819",
-        "name": "",
-        "group": "2e452c917eb8462f",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Air quality in the hall",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "500",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "50",
-        "seg2": "150",
-        "className": "",
-        "x": 340,
-        "y": 960,
-        "wires": []
-    },
-    {
-        "id": "26c3672e7bba04c6",
+        "id": "e6057232bf4a36b6",
         "type": "switch",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Check",
         "property": "payload",
         "propertyType": "msg",
@@ -593,14 +509,14 @@
         "y": 80,
         "wires": [
             [
-                "86e988d13c8669bf"
+                "2c87d24abeff254f"
             ]
         ]
     },
     {
-        "id": "e82fe882a45e51a2",
+        "id": "96c3484a2527ece3",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Trigger_Window_Clouse",
         "func": "msg.payload = \"close\";\nreturn msg;",
         "outputs": 1,
@@ -612,14 +528,14 @@
         "y": 1360,
         "wires": [
             [
-                "d94c50565ac81e2b"
+                "4d63ab6584181c2c"
             ]
         ]
     },
     {
-        "id": "4ea44dacbfcbed85",
+        "id": "7e4e2aebf7d56a7d",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Trigger_Air_purification",
         "func": "msg.payload = \"on\"\nreturn msg;",
         "outputs": 1,
@@ -631,14 +547,14 @@
         "y": 1400,
         "wires": [
             [
-                "2066ee947e03ba36"
+                "78b39f4d49b3dad9"
             ]
         ]
     },
     {
-        "id": "d94c50565ac81e2b",
+        "id": "4d63ab6584181c2c",
         "type": "mqtt out",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "topic": "home/1/room/bathroom/window/110",
         "qos": "",
@@ -648,15 +564,15 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "e36a753ffdd41585",
+        "broker": "41a5e8b17dc7f5bc",
         "x": 1090,
         "y": 1420,
         "wires": []
     },
     {
-        "id": "951f8501015277c5",
+        "id": "80c480e43cdf6b90",
         "type": "switch",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Check",
         "property": "payload",
         "propertyType": "msg",
@@ -679,19 +595,19 @@
         "y": 1400,
         "wires": [
             [
-                "e82fe882a45e51a2",
-                "4ea44dacbfcbed85"
+                "96c3484a2527ece3",
+                "7e4e2aebf7d56a7d"
             ],
             [
-                "f918e514fe28e51c",
-                "b271e61fecf34103"
+                "e1592974a38f2236",
+                "95bbc1f3fe97336a"
             ]
         ]
     },
     {
-        "id": "2066ee947e03ba36",
+        "id": "78b39f4d49b3dad9",
         "type": "mqtt out",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "topic": "home/1/room/bathroom/purifier/201",
         "qos": "",
@@ -701,15 +617,15 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "e36a753ffdd41585",
+        "broker": "41a5e8b17dc7f5bc",
         "x": 1070,
         "y": 1500,
         "wires": []
     },
     {
-        "id": "f918e514fe28e51c",
+        "id": "e1592974a38f2236",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Trigger_Window_Open",
         "func": "msg.payload = \"open\";\nreturn msg;",
         "outputs": 1,
@@ -721,14 +637,14 @@
         "y": 1500,
         "wires": [
             [
-                "d94c50565ac81e2b"
+                "4d63ab6584181c2c"
             ]
         ]
     },
     {
-        "id": "b271e61fecf34103",
+        "id": "95bbc1f3fe97336a",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Trigger_Air_purification_off",
         "func": "msg.payload = \"off\"\nreturn msg;",
         "outputs": 1,
@@ -740,14 +656,14 @@
         "y": 1540,
         "wires": [
             [
-                "2066ee947e03ba36"
+                "78b39f4d49b3dad9"
             ]
         ]
     },
     {
-        "id": "0461ddadeb4a29f9",
+        "id": "f30bc493a3dc2021",
         "type": "mqtt in",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "topic": "home/1/room/bathroom",
         "qos": "2",
@@ -761,69 +677,15 @@
         "y": 1380,
         "wires": [
             [
-                "3871c4ce232ca98a",
-                "951f8501015277c5",
-                "ec6cc8ce3bb0d173"
+                "80c480e43cdf6b90",
+                "e85146fb2fe31420"
             ]
         ]
     },
     {
-        "id": "3871c4ce232ca98a",
-        "type": "ui_gauge",
-        "z": "029daea79e489819",
-        "name": "",
-        "group": "2e452c917eb8462f",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Air quality in the bathroom",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "500",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "50",
-        "seg2": "150",
-        "className": "",
-        "x": 480,
-        "y": 1300,
-        "wires": []
-    },
-    {
-        "id": "86e988d13c8669bf",
-        "type": "sms77-sms",
-        "z": "029daea79e489819",
-        "config": "3f862dcbf059ce34",
-        "debug": "true",
-        "delay": "",
-        "details": "true",
-        "from": "",
-        "foreign_id": "",
-        "flash": "true",
-        "json": "true",
-        "label": "",
-        "message": "Hello!\n\nYour air qulaity data levels are getting dangerous. \n\nAirQulaityTeam",
-        "name": "sms77-sms",
-        "recipients": "DD",
-        "ttl": "",
-        "udh": "",
-        "unicode": "true",
-        "utf8": "true",
-        "x": 510,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8e0c4f7904fd884d",
+        "id": "7e17f06e1f595c39",
         "type": "change",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "rules": [
             {
@@ -843,15 +705,15 @@
         "y": 180,
         "wires": [
             [
-                "0cc34f71befe783f"
+                "e018317ea53f2958"
             ]
         ]
     },
     {
-        "id": "0cc34f71befe783f",
+        "id": "e018317ea53f2958",
         "type": "influxdb out",
-        "z": "029daea79e489819",
-        "influxdb": "47a0daacc263716d",
+        "z": "fc7e1518a76db993",
+        "influxdb": "d4147838d043b7d4",
         "name": "write to influxDB",
         "measurement": "airquality",
         "precision": "",
@@ -866,16 +728,16 @@
         "wires": []
     },
     {
-        "id": "7cacd884a4dfda30",
+        "id": "461a19836b6e67a0",
         "type": "change",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "[\t    {\t        \"units\": msg.payload\t    },{\t        \"home\": 1,\t        \"room\": \"out\"\t    }\t]",
+                "to": "[\t    {\t        \"units\": msg.payload\t    },{\t        \"home\": 1,\t        \"room\": \"kitchen\"\t    }\t]",
                 "tot": "jsonata"
             }
         ],
@@ -888,15 +750,15 @@
         "y": 420,
         "wires": [
             [
-                "d0256e0dfe94c49a"
+                "9b78da1d49e10d88"
             ]
         ]
     },
     {
-        "id": "d0256e0dfe94c49a",
+        "id": "9b78da1d49e10d88",
         "type": "influxdb out",
-        "z": "029daea79e489819",
-        "influxdb": "47a0daacc263716d",
+        "z": "fc7e1518a76db993",
+        "influxdb": "d4147838d043b7d4",
         "name": "write to influxDB",
         "measurement": "airquality",
         "precision": "",
@@ -911,9 +773,9 @@
         "wires": []
     },
     {
-        "id": "073eb05c7c4e2f1b",
+        "id": "b104ad648988eb12",
         "type": "inject",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Add new actuator config",
         "props": [
             {
@@ -931,14 +793,14 @@
         "y": 1680,
         "wires": [
             [
-                "06f34a90cf3c511b"
+                "4fbc577dfd885bc7"
             ]
         ]
     },
     {
-        "id": "06f34a90cf3c511b",
+        "id": "4fbc577dfd885bc7",
         "type": "influxdb out",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "influxdb": "bebdbf8371de4f4b",
         "name": "write to influxDB",
         "measurement": "config",
@@ -954,16 +816,16 @@
         "wires": []
     },
     {
-        "id": "134edd9744d39fbf",
+        "id": "91153e6f83d74810",
         "type": "change",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "[\t    {\t        \"units\": msg.payload\t    },{\t        \"home\": 1,\t        \"room\": \"out\"\t    }\t]",
+                "to": "[\t    {\t        \"units\": msg.payload\t    },{\t        \"home\": 1,\t        \"room\": \"bedroom\"\t    }\t]",
                 "tot": "jsonata"
             }
         ],
@@ -976,15 +838,15 @@
         "y": 720,
         "wires": [
             [
-                "3036db4d816f77a3"
+                "4dc9db029869c83b"
             ]
         ]
     },
     {
-        "id": "3036db4d816f77a3",
+        "id": "4dc9db029869c83b",
         "type": "influxdb out",
-        "z": "029daea79e489819",
-        "influxdb": "47a0daacc263716d",
+        "z": "fc7e1518a76db993",
+        "influxdb": "d4147838d043b7d4",
         "name": "write to influxDB",
         "measurement": "airquality",
         "precision": "",
@@ -999,16 +861,16 @@
         "wires": []
     },
     {
-        "id": "5d5182a3f0214217",
+        "id": "5495911ae57a0c8c",
         "type": "change",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "[\t    {\t        \"units\": msg.payload\t    },{\t        \"home\": 1,\t        \"room\": \"out\"\t    }\t]",
+                "to": "[\t    {\t        \"units\": msg.payload\t    },{\t        \"home\": 1,\t        \"room\": \"hall\"\t    }\t]",
                 "tot": "jsonata"
             }
         ],
@@ -1021,15 +883,15 @@
         "y": 1160,
         "wires": [
             [
-                "cfa29789ad3741d4"
+                "6f1938ee319f765a"
             ]
         ]
     },
     {
-        "id": "cfa29789ad3741d4",
+        "id": "6f1938ee319f765a",
         "type": "influxdb out",
-        "z": "029daea79e489819",
-        "influxdb": "47a0daacc263716d",
+        "z": "fc7e1518a76db993",
+        "influxdb": "d4147838d043b7d4",
         "name": "write to influxDB",
         "measurement": "airquality",
         "precision": "",
@@ -1044,16 +906,16 @@
         "wires": []
     },
     {
-        "id": "ec6cc8ce3bb0d173",
+        "id": "e85146fb2fe31420",
         "type": "change",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "[\t    {\t        \"units\": msg.payload\t    },{\t        \"home\": 1,\t        \"room\": \"out\"\t    }\t]",
+                "to": "[\t    {\t        \"units\": msg.payload\t    },{\t        \"home\": 1,\t        \"room\": \"bathroom\"\t    }\t]",
                 "tot": "jsonata"
             }
         ],
@@ -1066,15 +928,15 @@
         "y": 1460,
         "wires": [
             [
-                "c83d540c55687738"
+                "6e857eea5998fbc7"
             ]
         ]
     },
     {
-        "id": "c83d540c55687738",
+        "id": "6e857eea5998fbc7",
         "type": "influxdb out",
-        "z": "029daea79e489819",
-        "influxdb": "47a0daacc263716d",
+        "z": "fc7e1518a76db993",
+        "influxdb": "d4147838d043b7d4",
         "name": "write to influxDB",
         "measurement": "airquality",
         "precision": "",
@@ -1089,9 +951,9 @@
         "wires": []
     },
     {
-        "id": "a98e47e38995b70f",
+        "id": "833e1e96aa61fd46",
         "type": "influxdb in",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "influxdb": "bebdbf8371de4f4b",
         "name": "query config data",
         "query": "",
@@ -1103,14 +965,14 @@
         "y": 1000,
         "wires": [
             [
-                "fc613b1e377e42e4"
+                "d7080f06442d695b"
             ]
         ]
     },
     {
-        "id": "e3ef46933d0fe31f",
+        "id": "a140e76ad44c8fc7",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "QueryConfiguration",
         "func": "msg.query = String.raw`from(bucket: \"smart-air-quality\")\n    |> range(start: 2023-01-01T00:00:00Z, stop: now())\n    |> filter(fn: (r) => r[\"_measurement\"] == \"config\")\n    |> filter(fn: (r) => r[\"actuator_type\"] == \"window\")\n    |> filter(fn: (r) => r[\"home\"] == \"1\")`\n\nreturn msg;",
         "outputs": 1,
@@ -1122,14 +984,14 @@
         "y": 1000,
         "wires": [
             [
-                "a98e47e38995b70f"
+                "833e1e96aa61fd46"
             ]
         ]
     },
     {
-        "id": "fc613b1e377e42e4",
+        "id": "d7080f06442d695b",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Set the topic out and msg CLOSE",
         "func": "msg = msg.payload[0];\nconst home = msg[\"home\"];\nconst room = msg[\"room\"]\nconst type = msg[\"actuator_type\"]\n\nconst topic = \"home/\" + home+ \"/room/\" +room + \"/\" + type + \"/111\";\nmsg.topic = topic;\nmsg.payload =\"close\";\nreturn msg;",
         "outputs": 1,
@@ -1141,14 +1003,14 @@
         "y": 1000,
         "wires": [
             [
-                "f7da52353d8c2af7"
+                "189f3064093e89f4"
             ]
         ]
     },
     {
-        "id": "39d805b6c9f3f356",
+        "id": "c873754a0434d4fd",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "QueryConfiguration",
         "func": "msg.query = String.raw`from(bucket: \"smart-air-quality\")\n    |> range(start: 2023-01-01T00:00:00Z, stop: now())\n    |> filter(fn: (r) => r[\"_measurement\"] == \"config\")\n    |> filter(fn: (r) => r[\"actuator_type\"] == \"window\")\n    |> filter(fn: (r) => r[\"home\"] == \"1\")`\n\nreturn msg;",
         "outputs": 1,
@@ -1163,9 +1025,9 @@
         ]
     },
     {
-        "id": "bbb6dc04583e1281",
+        "id": "e2893545d78715b0",
         "type": "influxdb in",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "influxdb": "bebdbf8371de4f4b",
         "name": "query config data",
         "query": "",
@@ -1177,14 +1039,14 @@
         "y": 1060,
         "wires": [
             [
-                "44b2c52eddb0b8cd"
+                "d710adc7e7809892"
             ]
         ]
     },
     {
-        "id": "a5a651b9572b7409",
+        "id": "1c3185f4300c4b01",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "QueryConfiguration",
         "func": "msg.query = String.raw`from(bucket: \"smart-air-quality\")\n    |> range(start: 2023-01-01T00:00:00Z, stop: now())\n    |> filter(fn: (r) => r[\"_measurement\"] == \"config\")\n    |> filter(fn: (r) => r[\"actuator_type\"] == \"purifier\")\n    |> filter(fn: (r) => r[\"home\"] == \"1\")`\n\nreturn msg;",
         "outputs": 1,
@@ -1196,14 +1058,14 @@
         "y": 1060,
         "wires": [
             [
-                "bbb6dc04583e1281"
+                "e2893545d78715b0"
             ]
         ]
     },
     {
-        "id": "44b2c52eddb0b8cd",
+        "id": "d710adc7e7809892",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Set the topic out and msg ON",
         "func": "msg = msg.payload[0];\nconst home = msg[\"home\"];\nconst room = msg[\"room\"]\nconst type = msg[\"actuator_type\"]\n\nconst topic = \"home/\" + home+ \"/room/\" +room + \"/\" + type + \"/220\";\nmsg.topic = topic;\nmsg.payload =\"on\";\nreturn msg;",
         "outputs": 1,
@@ -1215,14 +1077,14 @@
         "y": 1060,
         "wires": [
             [
-                "0ba0429aa5a8d0ba"
+                "c9dd0c46adbb8779"
             ]
         ]
     },
     {
-        "id": "14b6111673edc1a0",
+        "id": "9e544b87f2efb561",
         "type": "influxdb in",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "influxdb": "bebdbf8371de4f4b",
         "name": "query config data",
         "query": "",
@@ -1234,14 +1096,14 @@
         "y": 1120,
         "wires": [
             [
-                "3bb145455d4d464f"
+                "1456dd86b1ae4040"
             ]
         ]
     },
     {
-        "id": "47a7f219fffe4ce8",
+        "id": "21b234204cbdf359",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "QueryConfiguration",
         "func": "msg.query = String.raw`from(bucket: \"smart-air-quality\")\n    |> range(start: 2023-01-01T00:00:00Z, stop: now())\n    |> filter(fn: (r) => r[\"_measurement\"] == \"config\")\n    |> filter(fn: (r) => r[\"actuator_type\"] == \"window\")\n    |> filter(fn: (r) => r[\"home\"] == \"1\")`\n\nreturn msg;",
         "outputs": 1,
@@ -1253,14 +1115,14 @@
         "y": 1120,
         "wires": [
             [
-                "14b6111673edc1a0"
+                "9e544b87f2efb561"
             ]
         ]
     },
     {
-        "id": "3bb145455d4d464f",
+        "id": "1456dd86b1ae4040",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Set the topic out and msg OPEN",
         "func": "msg = msg.payload[0];\nconst home = msg[\"home\"];\nconst room = msg[\"room\"]\nconst type = msg[\"actuator_type\"]\n\nconst topic = \"home/\" + home+ \"/room/\" +room + \"/\" + type + \"/111\";\nmsg.topic = topic;\nmsg.payload =\"open\";\nreturn msg;",
         "outputs": 1,
@@ -1272,14 +1134,14 @@
         "y": 1120,
         "wires": [
             [
-                "f7da52353d8c2af7"
+                "189f3064093e89f4"
             ]
         ]
     },
     {
-        "id": "643a3f51cf2e52d8",
+        "id": "f38a88bc3f4e9b60",
         "type": "influxdb in",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "influxdb": "bebdbf8371de4f4b",
         "name": "query config data",
         "query": "",
@@ -1291,14 +1153,14 @@
         "y": 1160,
         "wires": [
             [
-                "be265c1ed09ac17f"
+                "a70cba3117da2e58"
             ]
         ]
     },
     {
-        "id": "f7070f761f1b075b",
+        "id": "c83aa5f0487a0b57",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "QueryConfiguration",
         "func": "msg.query = String.raw`from(bucket: \"smart-air-quality\")\n    |> range(start: 2023-01-01T00:00:00Z, stop: now())\n    |> filter(fn: (r) => r[\"_measurement\"] == \"config\")\n    |> filter(fn: (r) => r[\"actuator_type\"] == \"purifier\")\n    |> filter(fn: (r) => r[\"home\"] == \"1\")`\n\nreturn msg;",
         "outputs": 1,
@@ -1310,14 +1172,14 @@
         "y": 1160,
         "wires": [
             [
-                "643a3f51cf2e52d8"
+                "f38a88bc3f4e9b60"
             ]
         ]
     },
     {
-        "id": "be265c1ed09ac17f",
+        "id": "a70cba3117da2e58",
         "type": "function",
-        "z": "029daea79e489819",
+        "z": "fc7e1518a76db993",
         "name": "Set the topic out and msg OFF",
         "func": "msg = msg.payload[0];\nconst home = msg[\"home\"];\nconst room = msg[\"room\"]\nconst type = msg[\"actuator_type\"]\n\nconst topic = \"home/\" + home+ \"/room/\" +room + \"/\" + type + \"/111\";\nmsg.topic = topic;\nmsg.payload =\"off\";\nreturn msg;",
         "outputs": 1,
@@ -1329,8 +1191,23 @@
         "y": 1160,
         "wires": [
             [
-                "0ba0429aa5a8d0ba"
+                "c9dd0c46adbb8779"
             ]
+        ]
+    },
+    {
+        "id": "2c87d24abeff254f",
+        "type": "sendsms",
+        "z": "fc7e1518a76db993",
+        "creds": "215afb2d6902c102",
+        "to": "+358449277665",
+        "fr": "SmartAirQuality",
+        "text": "Hello!  Your air quality levels are getting dangerous.  - AirQualityTeam",
+        "unicode": true,
+        "x": 510,
+        "y": 100,
+        "wires": [
+            []
         ]
     },
     {
@@ -1369,42 +1246,10 @@
         "disp": true,
         "width": "6",
         "collapse": false,
-        "className": ""
+        "className": "div.center"
     },
     {
-        "id": "e36a753ffdd41585",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "localhost",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "3f862dcbf059ce34",
-        "type": "sms77-config",
-        "name": "SMS_77_API"
-    },
-    {
-        "id": "47a0daacc263716d",
+        "id": "d4147838d043b7d4",
         "type": "influxdb",
         "hostname": "127.0.0.1",
         "port": "8086",
@@ -1432,9 +1277,13 @@
         "rejectUnauthorized": true
     },
     {
+        "id": "215afb2d6902c102",
+        "type": "nexmobasic"
+    },
+    {
         "id": "0648859e6711c8f9",
         "type": "ui_tab",
-        "name": "MQTT and COAP Sensors",
+        "name": "MQTT Sensors",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
