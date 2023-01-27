@@ -9,7 +9,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 public abstract class Actuator implements MqttCallback {
-	static final String serverURI = "tcp://localhost:1883";
+	static final String serverURI = "tcp://broker.hivemq.com:1883";
 
 	MqttClient client;
 	final int home_id;
@@ -33,9 +33,7 @@ public abstract class Actuator implements MqttCallback {
 	public void setupConnection() {
 		MqttConnectOptions options = new MqttConnectOptions();
 		options.setCleanSession(true);
-		options.setUserName("admin");
-		options.setPassword("1234".toCharArray());
-		options.setKeepAliveInterval(480);
+		
 		String message = String.format("Actuator %d: ", this.actuator_id) + "Connection established with server";
 		options.setWill(client.getTopic("ConnectionTopic"), message.getBytes(), 2, true);
 		try {
